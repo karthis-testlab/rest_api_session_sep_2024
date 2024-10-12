@@ -24,15 +24,12 @@ public class ValidateGetAllIncidentRecords {
 		MatcherAssert.assertThat(response.getStatusCode(), Matchers.equalTo(200));
 		MatcherAssert.assertThat(response.getStatusLine(), Matchers.containsString("OK"));
 		
-		Result[] results = response.getBody().jsonPath().getObject("result", Result[].class);
+		Results[] results = response.getBody().jsonPath().getObject("result", Results[].class);
 		
 		System.out.println(results.length);
 		
-		for (Result result : results) {
-			if(result.getCategory().equalsIgnoreCase("hardware")) {
-				System.out.println(result.getSys_id());
-				System.out.println(result.getNumber());
-			}
+		for (Results result : results) {
+			System.out.println(result.getCategory());
 		}
 
 	}

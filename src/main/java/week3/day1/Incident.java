@@ -37,6 +37,6 @@ public class Incident {
 
 	public void setUrgency(String urgency) {
 		this.urgency = urgency;
-	}	
+	}
 
 }

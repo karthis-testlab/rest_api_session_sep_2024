@@ -2,7 +2,7 @@ package week3.day1;
 
 import static io.restassured.RestAssured.given;
 
-import java.io.File;
+import com.google.gson.Gson;
 
 import io.restassured.http.Header;
 
@@ -24,6 +24,7 @@ public class RestAssuredScriptForPostMethodWithReqBody {
 		
 		Incident incident = new Incident();
 		incident.setDescription("Call Post MEthod with request payload");
+		incident.setShort_description("RESTAPISESSIONSEP2024");
 		
 		given()
 		  .auth()
@@ -32,7 +33,7 @@ public class RestAssuredScriptForPostMethodWithReqBody {
 		  .header(new Header("Content-Type", "application/json"))
 		  .log().all()
 		  .when()
-		  .body(incident)
+		  .body(new Gson().toJson(incident))
 		  .post(url)
 		  .then()
 		  .log().all()
