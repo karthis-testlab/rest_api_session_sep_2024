@@ -3,6 +3,22 @@
   <groupId>com.rest.api.session.sep.2024</groupId>
   <artifactId>rest_api_session_sep_2024</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+	<!-- Define the version of Allure you want to use via the allure.version property -->
+	<properties>
+		<allure.version>2.24.0</allure.version>
+	</properties>
+	<!-- Add allure-bom to dependency management to ensure correct versions of all the dependencies are used -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.qameta.allure</groupId>
+				<artifactId>allure-bom</artifactId>
+				<version>${allure.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 		<dependency>
@@ -45,6 +61,12 @@
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-testng</artifactId>
 			<version>7.20.1</version>
+		</dependency>
+		<!-- Add necessary Allure dependencies to dependencies section -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>

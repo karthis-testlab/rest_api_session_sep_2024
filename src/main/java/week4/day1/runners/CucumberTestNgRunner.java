@@ -14,7 +14,7 @@ import io.cucumber.testng.CucumberOptions;
 		        		    "pretty",
 		        		    "rerun:failed-test.txt"
 		        		  },
-		          tags = "@smoke or @regression"
+		          tags = "@debug"
 		        )
 public class CucumberTestNgRunner extends AbstractTestNGCucumberTests {
 	
