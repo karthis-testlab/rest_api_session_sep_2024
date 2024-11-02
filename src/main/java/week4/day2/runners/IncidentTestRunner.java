@@ -9,7 +9,8 @@ import io.cucumber.testng.CucumberOptions;
 		          dryRun = false,
 		          monochrome = true,
 		          plugin = {
-		        		  "pretty"
+		        		  "pretty",
+		        		  "io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm"
 		          }
 		         )
 public class IncidentTestRunner extends AbstractTestNGCucumberTests {
